@@ -9,3 +9,40 @@
 a {
     text-decoration: none;
 }
+
+body {
+    background: #131313;
+}
+
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loader h1 {
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.1);
+    font-size: 14em;
+    background-image: url(../images/water.png);
+    background-repeat: repeat-x;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: animate 25s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-position: left 0px top -40px;
+    }
+    40% {
+        background-position: left 800px top -100px;
+    }
+    80% {
+        background-position: left 1200px top -90px;
+    }
+    100% {
+        background-position: left 2400px top -40px;
+    }
+}

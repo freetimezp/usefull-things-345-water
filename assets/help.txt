@@ -1,3 +1,20 @@
+  <svg style="display: none">
+            <filter id="wave">
+                <feTurbulence id="turbulence" type="turbulence" baseFrequency="0.01 0.02" numOctaves="3" seed="2">
+                    <animate
+                        attributeName="baseFrequency"
+                        dur="40s"
+                        values="0.008 0.012; 0.010 0.014; 0.008 0.012"
+                        repeatCount="indefinite"
+                    />
+                </feTurbulence>
+
+                <feDisplacementMap in="SourceGraphic" scale="30" />
+            </filter>
+        </svg>
+
+
+
 //bgMaterial
 
     vertexShader: `

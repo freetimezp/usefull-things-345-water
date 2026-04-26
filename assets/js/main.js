@@ -176,3 +176,37 @@ window.addEventListener("resize", () => {
 
     waterMaterial.uniforms.u_resolution.value.set(window.innerWidth, window.innerHeight);
 });
+
+//menu
+const toggle = document.getElementById("menuToggle");
+const menu = document.getElementById("menu");
+const loader = document.querySelector(".loader");
+
+let isOpen = false;
+const CLOSE_DURATION = 1000;
+
+toggle.addEventListener("click", () => {
+    if (!isOpen) {
+        // OPEN
+        menu.classList.add("active");
+        toggle.classList.add("active");
+        document.body.classList.add("menu-open");
+
+        loader.style.opacity = "0.15";
+
+        isOpen = true;
+    } else {
+        // CLOSE
+        menu.classList.add("closing");
+        toggle.classList.remove("active");
+        document.body.classList.remove("menu-open");
+
+        setTimeout(() => {
+            menu.classList.remove("active", "closing");
+
+            loader.style.opacity = "1";
+        }, CLOSE_DURATION);
+
+        isOpen = false;
+    }
+});
